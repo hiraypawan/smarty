@@ -57,15 +57,6 @@ const sendMessage = (action: string, data?: any): Promise<any> => {
   });
 };
 
-// Create demo user
-const createDemoUser = (): User => ({
-  id: 'demo_' + Date.now(),
-  name: 'Demo User',
-  email: 'demo@smarty.ai',
-  plan: 'free',
-  createdAt: new Date(),
-  updatedAt: new Date()
-});
 
 const SidePanel: React.FC = () => {
   const [state, setState] = useState<AppState>({
@@ -210,35 +201,6 @@ const SidePanel: React.FC = () => {
     }
   };
 
-  const handleDemoLogin = async () => {
-    setState(prev => ({ ...prev, loading: true }));
-    const demoUser = createDemoUser();
-    
-    try {
-      await sendMessage('sign_up', {
-        email: demoUser.email,
-        password: 'demo123',
-        name: demoUser.name
-      });
-      await loadUserData(demoUser);
-      setState(prev => ({ ...prev, activeTab: 'home' }));
-    } catch (error) {
-      try {
-        await sendMessage('sign_in', {
-          email: demoUser.email,
-          password: 'demo123'
-        });
-        await loadUserData(demoUser);
-        setState(prev => ({ ...prev, activeTab: 'home' }));
-      } catch (e) {
-        setState(prev => ({
-          ...prev,
-          loading: false,
-          error: 'Failed to create demo account'
-        }));
-      }
-    }
-  };
 
   const summarizeCurrentPage = async () => {
     try {
@@ -430,11 +392,6 @@ const SidePanel: React.FC = () => {
             </button>
           </div>
           
-          <div className="demo-section">
-            <button className="btn-demo" onClick={handleDemoLogin}>
-              🚀 Try Demo Mode
-            </button>
-          </div>
         </div>
       </div>
     );

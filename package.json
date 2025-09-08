@@ -14,7 +14,8 @@
     "type-check": "tsc --noEmit",
     "package": "node scripts/package-crx.js",
     "deploy:prepare": "node scripts/deploy-update.js",
-    "deploy:auto": "node scripts/auto-deploy.js"
+    "deploy:auto": "node scripts/auto-deploy.js",
+    "deploy:now": "node scripts/deploy-now.js"
   },
   "keywords": [
     "browser-extension",

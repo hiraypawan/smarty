@@ -158,27 +158,6 @@ body {
   color: #764ba2;
 }
 
-.demo-section {
-  text-align: center;
-}
-
-.btn-demo {
-  width: 100%;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-demo:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
-}
 
 /* Panel Header */
 .panel-header {

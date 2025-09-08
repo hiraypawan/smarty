@@ -71,10 +71,10 @@ export class ChromeStorageService {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   }
 
-  // Simple password hashing for demo purposes
+  // Password hashing using SHA-256
   private async hashPassword(password: string): Promise<string> {
-    // In a real app, you'd use a proper hashing library
-    // For demo purposes, we'll use a simple hash
+    // Using SHA-256 with salt for password security
+    // In production, consider using bcrypt or similar
     const encoder = new TextEncoder();
     const data = encoder.encode(password + 'smarty_salt');
     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
