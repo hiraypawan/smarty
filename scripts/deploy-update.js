@@ -33,7 +33,7 @@ try {
 const updateXmlPath = path.resolve(__dirname, '../smarty-vercel-deploy/public/update.xml');
 const newUpdateXml = `<?xml version="1.0" encoding="UTF-8"?>
 <gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
-  <app appid="EXTENSION_ID_WILL_BE_GENERATED">
+  <app appid="jkdmbibpjjneabedgeflbcjffkjdpdfa">
     <updatecheck 
       codebase="https://mysmarty.vercel.app/smarty-extension-v${currentVersion}.crx" 
       version="${currentVersion}" />
