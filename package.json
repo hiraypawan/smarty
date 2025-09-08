@@ -13,7 +13,8 @@
     "lint": "eslint src/**/*.{js,ts,tsx}",
     "type-check": "tsc --noEmit",
     "package": "node scripts/package-crx.js",
-    "deploy:prepare": "node scripts/deploy-update.js"
+    "deploy:prepare": "node scripts/deploy-update.js",
+    "deploy:auto": "node scripts/auto-deploy.js"
   },
   "keywords": [
     "browser-extension",
