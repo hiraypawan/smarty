@@ -3,7 +3,7 @@
   "name": "Smarty - AI Browser Automation Assistant",
   "version": "1.0.0",
   "description": "AI-powered browser extension for smart automation, content summarization, lead generation, price monitoring, and productivity enhancement.",
-  "update_url": "https://smarty-extension.vercel.app/update.xml",
+  "update_url": "https://mysmarty.vercel.app/update.xml",
   "permissions": [
     "activeTab",
     "storage",

@@ -35,7 +35,7 @@ const newUpdateXml = `<?xml version="1.0" encoding="UTF-8"?>
 <gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
   <app appid="EXTENSION_ID_WILL_BE_GENERATED">
     <updatecheck 
-      codebase="https://smarty-extension.vercel.app/smarty-extension-v${currentVersion}.crx" 
+      codebase="https://mysmarty.vercel.app/smarty-extension-v${currentVersion}.crx" 
       version="${currentVersion}" />
   </app>
 </gupdate>`;
