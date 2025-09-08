@@ -1,0 +1,354 @@
+/* Smarty Content Script Styles */
+
+/* Floating Action Button */
+#smarty-floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.smarty-fab {
+  position: relative;
+}
+
+.smarty-fab-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.smarty-fab-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.smarty-fab-menu {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: 12px;
+  min-width: 180px;
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.smarty-fab-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.smarty-fab-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.smarty-fab-option:hover {
+  background-color: #f8f9fa;
+  color: #667eea;
+}
+
+.smarty-fab-option:active {
+  transform: scale(0.98);
+}
+
+/* Notifications */
+.smarty-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10001;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  animation: smartySlideIn 0.3s ease;
+  line-height: 1.4;
+}
+
+.smarty-notification-success { 
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.smarty-notification-error { 
+  background: linear-gradient(135deg, #F44336, #da3025);
+}
+
+.smarty-notification-info { 
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.smarty-notification-warning { 
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+@keyframes smartySlideIn {
+  from { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes smartySlideOut {
+  from { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+  to { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+}
+
+/* Loading Spinner */
+.smarty-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: smartySpinLoader 1s ease-in-out infinite;
+}
+
+@keyframes smartySpinLoader {
+  to { transform: rotate(360deg); }
+}
+
+/* Page Overlay for Full Automation */
+.smarty-page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.95);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.smarty-overlay-content {
+  max-width: 400px;
+  padding: 40px;
+}
+
+.smarty-overlay-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.smarty-overlay-message {
+  font-size: 16px;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.smarty-overlay-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.smarty-overlay-progress-bar {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.smarty-overlay-steps {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.smarty-overlay-step {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.smarty-overlay-step-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.smarty-overlay-step.completed .smarty-overlay-step-icon {
+  background: #4CAF50;
+}
+
+.smarty-overlay-step.active .smarty-overlay-step-icon {
+  background: white;
+  color: #667eea;
+}
+
+.smarty-overlay-step.pending .smarty-overlay-step-icon {
+  background: rgba(255,255,255,0.3);
+}
+
+.smarty-cancel-button {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.smarty-cancel-button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-1px);
+}
+
+/* Form highlighting for auto-fill */
+.smarty-form-highlight {
+  outline: 2px solid #667eea !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2) !important;
+  transition: all 0.2s ease;
+}
+
+.smarty-field-highlight {
+  background-color: rgba(102, 126, 234, 0.1) !important;
+  border-color: #667eea !important;
+  transition: all 0.2s ease;
+}
+
+/* Data extraction highlights */
+.smarty-extract-highlight {
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  outline: 2px solid #4CAF50 !important;
+  outline-offset: 1px;
+}
+
+.smarty-extract-tooltip {
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 10002;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.smarty-extract-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #smarty-floating-button {
+    bottom: 80px; /* Avoid mobile browser controls */
+  }
+  
+  .smarty-fab-menu {
+    right: -160px;
+    bottom: 70px;
+  }
+  
+  .smarty-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .smarty-overlay-content {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .smarty-fab-menu {
+    background: #2d3748;
+    color: #e2e8f0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  
+  .smarty-fab-option {
+    color: #e2e8f0;
+  }
+  
+  .smarty-fab-option:hover {
+    background-color: #4a5568;
+    color: #90cdf4;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .smarty-fab-icon,
+  .smarty-fab-menu,
+  .smarty-fab-option,
+  .smarty-notification {
+    transition: none;
+    animation: none;
+  }
+  
+  .smarty-loading-spinner {
+    animation: none;
+    border-top-color: transparent;
+    border-right-color: white;
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Smarty - AI Browser Automation Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered browser extension for smart automation, content summarization, lead generation, price monitoring, and productivity enhancement.",
+  "update_url": "https://smarty-extension.vercel.app/update.xml",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications",
+    "scripting",
+    "tabs",
+    "alarms",
+    "sidePanel",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Smarty Assistant",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*.png"],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ]
+}
